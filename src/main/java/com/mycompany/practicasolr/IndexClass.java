@@ -35,6 +35,7 @@ public class IndexClass {
             
         String fileName = "src\\main\\java\\ejemplo\\ejemplo.txt"; //Ruta relativa hacia el fichero
         Scanner scan = new Scanner(new File(fileName));
+        String s;
         String titulo = "", autor = "", texto = "", indice = "";//Variables donde irán los valores temporales del documento
         SolrInputDocument doc = new SolrInputDocument();
         while (scan.hasNextLine()) {

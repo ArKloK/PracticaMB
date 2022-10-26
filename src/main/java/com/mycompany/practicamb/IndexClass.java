@@ -49,7 +49,7 @@ public class IndexClass {
                     if (!line.equals(".W")) {
                         doc.addField("autor", line);
                     } else {
-                        titulo = "";
+                        autor = "";
                     }
                 }
             }

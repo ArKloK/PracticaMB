@@ -1,0 +1,276 @@
+.I 1
+.T
+18 Editions of the Dewey Decimal Classifications
+.A
+Comaromi, J.P.
+.W
+   The present study is a history of the DEWEY Decimal
+Classification.  The first edition of the DDC was published
+in 1876, the eighteenth edition in 1971, and future editions
+will continue to appear as needed.  In spite of the DDC's
+long and healthy life, however, its full story has never
+been told.  There have been biographies of Dewey
+that briefly describe his system, but this is the first
+attempt to provide a detailed history of the work that
+more than any other has spurred the growth of
+librarianship in this country and abroad.
+.X
+1	5	1
+92	1	1
+262	1	1
+556	1	1
+1004	1	1
+1024	1	1
+1024	1	1
+.I 2
+.T 
+Use Made of Technical Libraries
+.A 
+Slater, M.
+.W
+This report is an analysis of 6300 acts of use
+in 104 technical libraries in the United Kingdom.
+Library use is only one aspect of the wider pattern of
+information use.  Information transfer in libraries is
+restricted to the use of documents.  It takes no
+account of documents used outside the library, still
+less of information transferred orally from person
+to person.  The library acts as a channel in only a
+proportion of the situations in which information is
+transferred.
+Taking technical information transfer as a whole,
+there is no doubt that this proportion is not the
+major one.  There are users of technical information -
+particularly in technology rather than science -
+who visit libraries rarely if at all, relying on desk
+collections of handbooks, current periodicals and personal
+contact with their colleagues and with people in other
+organizations.  Even regular library users also receive
+information in other ways.
+.X
+2	5	2
+32	1	2
+76	1	2
+132	1	2
+137	1	2
+139	1	2
+152	2	2
+155	1	2
+158	1	2
+183	1	2
+195	1	2
+203	1	2
+204	1	2
+210	1	2
+243	1	2
+371	1	2
+475	1	2
+552	1	2
+760	1	2
+770	1	2
+771	1	2
+774	1	2
+775	1	2
+776	1	2
+788	1	2
+789	1	2
+801	1	2
+815	1	2
+839	1	2
+977	1	2
+1055	1	2
+1056	1	2
+1151	1	2
+1361	1	2
+1414	1	2
+1451	1	2
+1451	1	2
+.I 3
+.T
+Two Kinds of Power
+An Essay on Bibliographic Control
+.A
+Wilson, P.
+.W
+    The relationships between the organization and control of writings
+and the organization and control of knowledge and information will
+inevitably enter our story, for writings contain, along with much else, a
+great deal of mankind's stock of knowledge and information.  Bibliographical
+control is a form of power, and if knowledge itself is a form of power,
+as the familiar slogan claims, bibliographical control is in a certain sense
+power over power, power to obtain the knowledge recorded in written
+form.  As writings are not simply, and not in any simple way, storehouses of
+knowledge, we cannot satisfactorily discuss bibliographical control as
+simply control over the knowledge and information contained in writings.
+.X
+3	7	3
+42	1	3
+172	1	3
+268	1	3
+292	1	3
+323	1	3
+360	1	3
+361	1	3
+444	1	3
+457	1	3
+665	1	3
+762	1	3
+803	1	3
+846	1	3
+907	2	3
+911	1	3
+985	1	3
+1219	1	3
+1268	1	3
+1309	1	3
+1402	2	3
+1426	1	3
+1426	1	3
+.I 33
+.T
+The "Half-Life" of Some Scientific and Technical Literatures
+.A
+Burton, R.E.
+.A
+Kebler, R.W.
+.W
+   A consideration of the analogy between the half-life of radioactive 
+substances and the rate of obsolescence of scientific literature.. The validity 
+of this analogy suggest the possibility of more accurate prognostications
+concerning the period of time during which scientific literature may by used 
+and hence might help to guide the planning of library collections and 
+technical information services..
+.X
+33	19	33
+36	2	33
+41	1	33
+46	1	33
+48	2	33
+89	1	33
+90	1	33
+97	1	33
+101	1	33
+102	1	33
+104	1	33
+105	1	33
+106	2	33
+107	1	33
+111	2	33
+112	1	33
+155	2	33
+161	1	33
+163	1	33
+183	2	33
+184	2	33
+193	2	33
+198	1	33
+199	2	33
+201	1	33
+202	1	33
+203	2	33
+204	1	33
+205	1	33
+209	1	33
+210	1	33
+212	1	33
+217	1	33
+220	1	33
+222	1	33
+225	1	33
+233	1	33
+267	1	33
+269	1	33
+284	1	33
+286	1	33
+294	1	33
+314	1	33
+361	1	33
+367	1	33
+373	2	33
+543	1	33
+544	1	33
+545	2	33
+552	1	33
+560	1	33
+587	2	33
+588	1	33
+605	2	33
+613	2	33
+614	3	33
+616	1	33
+624	1	33
+632	1	33
+635	1	33
+638	3	33
+651	1	33
+667	1	33
+735	1	33
+747	2	33
+748	1	33
+750	2	33
+751	1	33
+753	1	33
+759	1	33
+765	1	33
+766	1	33
+767	3	33
+775	3	33
+778	1	33
+782	1	33
+784	2	33
+786	1	33
+788	1	33
+789	2	33
+791	1	33
+793	4	33
+794	1	33
+799	1	33
+800	5	33
+808	3	33
+811	1	33
+905	1	33
+925	2	33
+948	1	33
+953	1	33
+959	1	33
+977	2	33
+983	3	33
+1016	1	33
+1019	1	33
+1023	1	33
+1030	2	33
+1055	1	33
+1063	1	33
+1081	1	33
+1082	2	33
+1087	1	33
+1088	1	33
+1090	1	33
+1097	1	33
+1135	1	33
+1151	1	33
+1174	1	33
+1260	1	33
+1273	1	33
+1275	2	33
+1276	1	33
+1278	1	33
+1280	1	33
+1285	4	33
+1286	4	33
+1287	5	33
+1302	2	33
+1308	2	33
+1312	1	33
+1334	1	33
+1335	2	33
+1338	2	33
+1341	1	33
+1346	1	33
+1352	1	33
+1390	1	33
+1397	1	33
+1417	1	33
+1428	1	33
+1432	1	33
+1432	1	33

@@ -26,14 +26,14 @@ public class IndexClass {
         final SolrClient client = new HttpSolrClient.Builder("http://localhost:8983/solr").build();
 
         //Forma alternativa de crear core en Solr 
-            //String coreName = "micoleccion";
-            //String solrDir = "/../solr-9.0.0/server/solr/micoleccion";
-            //CoreAdminRequest.Create createRequest = new CoreAdminRequest.Create();
-            //createRequest.setCoreName(coreName);
-            //createRequest.setInstanceDir(solrDir);
-            //createRequest.process(client); //Se ejecuta solo la primera vez que arranco Slor
-            
-        String fileName = "src\\main\\java\\ejemplo\\ejemplo.txt"; //Ruta relativa hacia el fichero
+        //String coreName = "micoleccion";
+        //String solrDir = "/../solr-9.0.0/server/solr/micoleccion";
+        //CoreAdminRequest.Create createRequest = new CoreAdminRequest.Create();
+        //createRequest.setCoreName(coreName);
+        //createRequest.setInstanceDir(solrDir);
+        //createRequest.process(client); //Se ejecuta solo la primera vez que arranco Slor
+        //String fileName = "src\\main\\java\\ejemplo\\ejemplo.txt"; //Ruta relativa hacia el fichero
+        String fileName = "C:\\Users\\Carlos\\Documents\\UHU\\MB\\CISI.ALL"; //Ruta relativa hacia el fichero
         Scanner scan = new Scanner(new File(fileName));
         String titulo = "", autor = "", texto = "", indice = "";//Variables donde irán los valores temporales del documento
         SolrInputDocument doc = new SolrInputDocument();
@@ -44,14 +44,25 @@ public class IndexClass {
                 doc.addField("id", indice);
             }
             if (line.contains(".T")) {
-                line = scan.nextLine();
-                titulo = line;//Leemos el titulo en la linea inferior
-                doc.addField("titulo", titulo);
+                while (!line.contains(".A")) {
+                    line = scan.nextLine();
+                    if (!line.contains(".A")) {
+                        titulo = titulo + " " + line;
+                    } else {
+                        doc.addField("titulo", titulo);
+                        titulo = "";
+                    }
+                }
             }
             if (line.contains(".A")) {
-                line = scan.nextLine();
-                autor = line;//Leemos el autor en la linea inferior
-                doc.addField("autor", autor);
+                while (!line.equals(".W")) {
+                    line = scan.nextLine();
+                    if (!line.equals(".W") && !line.equals(".A")) {
+                        doc.addField("autor", line);
+                    } else {
+                        titulo = "";
+                    }
+                }
             }
             if (line.contains(".W")) {
                 while (!line.contains(".X")) {
@@ -64,7 +75,7 @@ public class IndexClass {
                     }
                 }
             }
-            if (line.contains(".X")) {
+            if (line.contentEquals(".X")) {
                 final UpdateResponse updateResponse = client.add("micoleccion", doc);//Subimos el documento completo
                 doc = new SolrInputDocument();//Luego creamos otro documento independiente
             }

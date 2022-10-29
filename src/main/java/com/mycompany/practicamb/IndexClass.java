@@ -22,7 +22,7 @@ public class IndexClass {
             //createRequest.setInstanceDir(solrDir);
             //createRequest.process(client); //Se ejecuta solo la primera vez que arranco Slor
         //String fileName = "src\\main\\java\\ejemplo\\ejemplo.txt"; //Ruta relativa hacia el fichero
-        String fileName = "C:\\Users\\Carlos\\Documents\\UHU\\MB\\CISI.ALL"; //Ruta relativa hacia el fichero
+        String fileName = "D:\\Documentos\\UHU\\MB\\CISI.ALL";
         Scanner scan = new Scanner(new File(fileName));
         String titulo = "", autor = "", texto = "", indice = "";//Variables donde irán los valores temporales del documento
         SolrInputDocument doc = new SolrInputDocument();

@@ -18,16 +18,13 @@ public class Consultas {
         //Ruta relativa hacia el fichero
         String fileName = "src\\main\\java\\ejemplo\\CISI.QRY";
 
-        int contador = 0, j = 0;
         //Fichero donde guardamos los resultados de las consultas
-        File fichero = new File("C:\\Users\\Carlos\\Documents\\UHU\\MB\\PracticaMB\\src\\main\\java\\ejemplo\\queryresults.txt");
+        File fichero = new File("C:\\Users\\Carlos\\Documents\\UHU\\MB\\queryresults.txt");
         fichero.createNewFile();
         //Indicamos el documento donde vamos a escribir
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
         Scanner scan = new Scanner(new File(fileName));
         String texto = "", indice = "";
-
-        SolrDocumentList docs = null;
 
         HttpSolrClient solr = new HttpSolrClient.Builder("http://localhost:8983/solr/micoleccion").build();
 
@@ -45,11 +42,9 @@ public class Consultas {
                     if (line.endsWith(")")) {
                         line = line.substring(0, line.length() - 1);
                     }
-                    if (line.endsWith(".") || line.endsWith("?")) {
-                        line = line.substring(0, line.length() - 1);
-                        texto += " " + line;
+                    if (scan.hasNext(".I")) {
                         break;
-                    } else
+                    }else
                         texto += " " + line;
                 }
                 //System.out.println(indice+ " " + texto);
@@ -57,11 +52,9 @@ public class Consultas {
                 query.setQuery("texto:" + texto + " OR titulo:" + texto);
                 query.setFields("id", "score");
                 QueryResponse rsp = solr.query(query);
-                docs = rsp.getResults();
+                SolrDocumentList docs = rsp.getResults();
                 for (int i = 0; i < docs.size(); ++i) {
-                    bw.write(indice + " Q0 " + docs.get(i).getFieldValue("id") + " " + contador + " " + docs.get(i).getFieldValue("score") + " UHU\n");
-                    contador++;
-                }
+                    bw.write(indice + " Q0 " + docs.get(i).getFieldValue("id") + " " + i + " " + docs.get(i).getFieldValue("score") + " UHU\n");                }
                 texto = "";
             }
         }

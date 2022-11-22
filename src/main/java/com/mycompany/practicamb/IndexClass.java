@@ -21,7 +21,6 @@ public class IndexClass {
             //createRequest.setCoreName(coreName);
             //createRequest.setInstanceDir(solrDir);
             //createRequest.process(client); //Se ejecuta solo la primera vez que arranco Slor
-        //String fileName = "src\\main\\java\\ejemplo\\ejemplo.txt"; //Ruta relativa hacia el fichero
         String fileName = "src\\main\\java\\ejemplo\\CISI.ALL";
         Scanner scan = new Scanner(new File(fileName));
         String titulo = "", autor = "", texto = "", indice = "";//Variables donde irán los valores temporales del documento

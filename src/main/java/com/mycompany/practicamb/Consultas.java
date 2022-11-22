@@ -34,23 +34,26 @@ public class Consultas {
             if (line.startsWith(".I")) {
                 indice = line.substring(3);
             } else if (line.equals(".W")) {
-                while (!line.equals(".I") && !line.equals(".B")) {
-                    line = scan.nextLine();
+                while (!line.startsWith(".I") && !line.equals(".B")) {
+                    line = scan.next();
                     
-                    texto += " " + line;
+                    if (line.endsWith(":")) {
+                        line = line.substring(0, line.length()-1);
+                    }
                     
+                    texto += line + " ";
                     if (scan.hasNext(".I") || scan.hasNext(".B")) {
                         break;
                     }   
                 }
-                System.out.println(indice + texto);
+                System.out.println(indice + " " + texto);
                 SolrQuery query = new SolrQuery();
                 query.setQuery("texto:" + texto);
                 query.setFields("id", "score");
                 QueryResponse rsp = solr.query(query);
                 SolrDocumentList docs = rsp.getResults();
                 for (int i = 0; i < docs.size(); ++i) {
-                    bw.write(indice + " Q0 " + docs.get(i).getFieldValue("id") + " " + i + " " + docs.get(i).getFieldValue("score") + " UHU\n");                
+                    bw.write(indice + " Q0 " + docs.get(i).getFieldValue("id") + " " + i + " " + docs.get(i).getFieldValue("score") + " UHU\n");
                 }
                 texto = "";
             }

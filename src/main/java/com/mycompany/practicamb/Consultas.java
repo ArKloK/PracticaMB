@@ -17,12 +17,16 @@ public class Consultas {
     public static void main(String[] args) throws SolrServerException, IOException {
         //Ruta relativa hacia el fichero
         String fileName = "src\\main\\java\\ejemplo\\CISI.QRY";
+        String diccionario = "src\\main\\java\\ejemplo\\diccionario.txt";
 
         //Fichero donde guardamos los resultados de las consultas
         File fichero = new File("C:\\Users\\Carlos\\Documents\\UHU\\MB\\queryresults.txt");
+        //File fichero = new File("D:\\Documentos\\UHU\\MB\\queryresults.txt");
         fichero.createNewFile();
         //Indicamos el documento donde vamos a escribir
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
+        Scanner scandiccionario = new Scanner(new File(diccionario));
+        Scanner scandiccionarioaux = new Scanner(new File(diccionario));
         Scanner scan = new Scanner(new File(fileName));
         String texto = "", indice = "";
 
@@ -36,15 +40,25 @@ public class Consultas {
             } else if (line.equals(".W")) {
                 while (!line.startsWith(".I") && !line.equals(".B")) {
                     line = scan.next();
+                    String tokendiccionario = scandiccionario.next();
                     
-                    if (line.endsWith(":")) {
-                        line = line.substring(0, line.length()-1);
+                    while(scandiccionario.hasNext()){
+                        if (line.startsWith(tokendiccionario)) {
+                            line = line.substring(1);
+                        }else if (line.endsWith(tokendiccionario)) {
+                            line = line.substring(0, line.length()-1);
+                        }
+                        tokendiccionario = scan.next();
                     }
                     
+                    scandiccionario = scandiccionarioaux;
+                    /*if (line.endsWith(":")) {
+                        line = line.substring(0, line.length()-1);
+                    }*/
                     texto += line + " ";
                     if (scan.hasNext(".I") || scan.hasNext(".B")) {
                         break;
-                    }   
+                    }
                 }
                 System.out.println(indice + " " + texto);
                 SolrQuery query = new SolrQuery();

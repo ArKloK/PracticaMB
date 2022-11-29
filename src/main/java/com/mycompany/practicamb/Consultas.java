@@ -40,18 +40,27 @@ public class Consultas {
                 while (!line.startsWith(".I") && !line.equals(".B")) {
                     line = scan.next();
                     Scanner scandiccionario = new Scanner(new File(diccionario));
-                    
-                    while(scandiccionario.hasNext()){
+
+                    while (scandiccionario.hasNext()) {
                         String tokendiccionario = scandiccionario.next();
                         if (line.startsWith(tokendiccionario)) {
                             line = line.substring(1);
-                        }else if (line.endsWith(tokendiccionario)) {
-                            line = line.substring(0, line.length()-1);
+                            scandiccionario = new Scanner(new File(diccionario));
+                        } else if (line.endsWith(tokendiccionario)) {
+                            line = line.substring(0, line.length() - 1);
+                            scandiccionario = new Scanner(new File(diccionario));
+                        } else if (line.contains(tokendiccionario)) {
+                            line = line.replace(tokendiccionario, "");
+                            /*for(int i=0; i<line.length(); i++){
+					if(line.charAt(i).equals(tokendiccionario)){
+						String auxizq = line.substring(0, i-1);
+						String auxdrcha = line.substring(i+1, line.length());
+						line = auxizq + auxdrcha;
+					}
+				}*/
+                            scandiccionario = new Scanner(new File(diccionario));
                         }
                     }
-                    /*if (line.endsWith(":")) {
-                        line = line.substring(0, line.length()-1);
-                    }*/
                     texto += line + " ";
                     if (scan.hasNext(".I") || scan.hasNext(".B")) {
                         break;
@@ -59,7 +68,7 @@ public class Consultas {
                 }
                 System.out.println(indice + " " + texto);
                 SolrQuery query = new SolrQuery();
-                query.setQuery("texto:" + texto);
+                query.setQuery("texto : " + texto);
                 query.setFields("id", "score");
                 QueryResponse rsp = solr.query(query);
                 SolrDocumentList docs = rsp.getResults();

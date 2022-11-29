@@ -66,7 +66,7 @@ public class Consultas {
                         break;
                     }
                 }
-                System.out.println(indice + " " + texto);
+                //System.out.println(indice + " " + texto);
                 SolrQuery query = new SolrQuery();
                 query.setQuery("texto : " + texto);
                 query.setFields("id", "score");

@@ -25,7 +25,6 @@ public class Consultas {
         fichero.createNewFile();
         //Indicamos el documento donde vamos a escribir
         BufferedWriter bw = new BufferedWriter(new FileWriter(fichero));
-        Scanner scandiccionarioaux = new Scanner(new File(diccionario));
         Scanner scan = new Scanner(new File(fileName));
         String texto = "", indice = "";
 
@@ -51,13 +50,6 @@ public class Consultas {
                             scandiccionario = new Scanner(new File(diccionario));
                         } else if (line.contains(tokendiccionario)) {
                             line = line.replace(tokendiccionario, "");
-                            /*for(int i=0; i<line.length(); i++){
-					if(line.charAt(i).equals(tokendiccionario)){
-						String auxizq = line.substring(0, i-1);
-						String auxdrcha = line.substring(i+1, line.length());
-						line = auxizq + auxdrcha;
-					}
-				}*/
                             scandiccionario = new Scanner(new File(diccionario));
                         }
                     }
